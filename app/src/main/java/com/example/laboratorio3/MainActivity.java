@@ -6,6 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.laboratorio3.entity.ListaMastEmergencia;
+import com.example.laboratorio3.entity.MascotaEmergencia;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,6 +18,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Ambulancias Mascotín");
+
+
+        //imprimir lista
+        ArrayList<MascotaEmergencia> list= ListaMastEmergencia.getListaMastEmergencia();
+
+        for (MascotaEmergencia obj:list){
+            System.out.println(obj.getNombreMasc());
+
+        }
+
+
     }
 
     public void registro (View view){

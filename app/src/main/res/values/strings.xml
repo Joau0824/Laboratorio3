@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Laboratorio3</string>
     <string name="registro">Ambulancias Mascotín Registro</string>
+    <string-array name="listaGenero">
+        <item>Femenino</item>
+        <item>Masculino</item>
+    </string-array>
 </resources>
