@@ -6,4 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".MainActivityEmergencia">
 
+    <EditText
+        android:id="@+id/DNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Destino"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <EditText
+        android:id="@+id/Destino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Origen" />
+
+    <EditText
+        android:id="@+id/Origen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:text="Origen:"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Origen"
+        app:layout_constraintEnd_toStartOf="@+id/Origen"
+        app:layout_constraintTop_toTopOf="@+id/Origen"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:text="Destino:"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Destino"
+        app:layout_constraintEnd_toStartOf="@+id/Destino"
+        app:layout_constraintTop_toTopOf="@+id/Destino" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:text="DNI:"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/DNI"
+        app:layout_constraintEnd_toStartOf="@+id/DNI"
+        app:layout_constraintTop_toTopOf="@+id/DNI" />
+
+    <Button
+        android:id="@+id/Calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E16464"
+        android:text="Calcular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.534" />
 </androidx.constraintlayout.widget.ConstraintLayout>
