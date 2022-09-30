@@ -15,12 +15,15 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivityHistorial"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivityEmergencia"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivityRegistro"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

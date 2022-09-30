@@ -10,7 +10,6 @@
         android:id="@+id/Registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FF9800"
         android:backgroundTint="#FF9800"
         android:onClick="registro"
         android:text="Registro"
@@ -19,13 +18,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintVertical_bias="0.219"/>
 
     <Button
         android:id="@+id/Emergencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#AE0000"
         android:backgroundTint="#AE0000"
         android:onClick="emergencia"
         android:text="Emergencia"
@@ -40,7 +38,6 @@
         android:id="@+id/Historial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#59A600"
         android:backgroundTint="#59A600"
         android:onClick="historial"
         android:text="Historial"
