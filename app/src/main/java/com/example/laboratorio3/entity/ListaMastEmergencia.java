@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class ListaMastEmergencia {
 
     public static ArrayList<MascotaEmergencia> listaMastEmergencia=new ArrayList<>();
-
     public static ArrayList<MascotaEmergencia> getListaMastEmergencia(){
         return listaMastEmergencia;
     }
@@ -14,9 +13,15 @@ public class ListaMastEmergencia {
         listaMastEmergencia.add(mascotaEmergencia);
     }
 
-    public static void deleteMascotaEmergencia(MascotaEmergencia mascotaEmergencia){
-        listaMastEmergencia.remove(mascotaEmergencia);
+
+    public static ArrayList<OrigenDestino> listaOrigenDestino=new ArrayList<>();
+    public static ArrayList<OrigenDestino> getListaOrigenDestino(){
+        return listaOrigenDestino;
     }
+
+
+
+
 
 
 
