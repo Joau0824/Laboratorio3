@@ -23,8 +23,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivityRegistro"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/registro"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
