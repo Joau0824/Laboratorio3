@@ -8,7 +8,7 @@ public class ListaMastEmergencia {
     public static ArrayList<MascotaEmergencia> getListaMastEmergencia(){
         return listaMastEmergencia;
     }
-
+    //to add new pet in emergency
     public static void addMascotaEmergencia(MascotaEmergencia mascotaEmergencia){
         listaMastEmergencia.add(mascotaEmergencia);
     }

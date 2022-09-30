@@ -1,14 +1,13 @@
 package com.example.laboratorio3;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
 
 import android.os.Bundle;
 
-public class MainActivityEmergencia extends AppCompatActivity {
+public class MainActivityEmergencia extends ViewModel {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_emergencia);
-    }
+
+
+
 }

@@ -1,6 +1,8 @@
 package com.example.laboratorio3.entity;
 
-public class MascotaEmergencia {
+import java.io.Serializable;
+
+public class MascotaEmergencia implements Serializable {
 
     public MascotaEmergencia(String nombreMasc, String generoMasc, String nombreDuenho, int DNI, String descripcion) {
         this.nombreMasc = nombreMasc;
