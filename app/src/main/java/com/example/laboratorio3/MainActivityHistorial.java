@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.widget.TextView;
 
 import com.example.laboratorio3.entity.ListaMastEmergencia;
@@ -49,5 +50,9 @@ public class MainActivityHistorial extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu3puntos,menu);
+        return true;
+    }
 }

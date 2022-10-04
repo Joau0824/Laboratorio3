@@ -2,8 +2,8 @@
     <string name="app_name">Laboratorio3</string>
     <string name="registro">Ambulancias Mascotín Registro</string>
     <string-array name="listaGenero">
-        <item>Femenino</item>
-        <item>Masculino</item>
+        <item>Hembra</item>
+        <item>Macho</item>
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>
