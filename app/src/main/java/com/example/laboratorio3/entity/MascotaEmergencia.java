@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 public class MascotaEmergencia implements Serializable {
 
-    public MascotaEmergencia(String nombreMasc, String generoMasc, String nombreDuenho, int DNI, String descripcion) {
+    public MascotaEmergencia(String nombreMasc, String generoMasc, String nombreDuenho, int DNI, String descripcion,String ruta) {
         this.nombreMasc = nombreMasc;
         this.generoMasc = generoMasc;
         this.nombreDuenho = nombreDuenho;
         this.DNI = DNI;
         this.descripcion = descripcion;
+        this.ruta=ruta;
     }
 
     private String nombreMasc;
@@ -17,6 +18,15 @@ public class MascotaEmergencia implements Serializable {
     private String nombreDuenho;
     private int DNI;
     private String descripcion;
+    private String ruta="";
+
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
 
     public String getNombreMasc() {
         return nombreMasc;

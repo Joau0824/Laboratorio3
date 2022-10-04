@@ -58,7 +58,7 @@ public class MainActivityRegistro extends AppCompatActivity {
         //se añade a la lista dinamica
 
         if(fine) {
-            MascotaEmergencia mascotaEmer = new MascotaEmergencia(textStringNomMasc, textGenero, textnomDue, dniint, textDesc);
+            MascotaEmergencia mascotaEmer = new MascotaEmergencia(textStringNomMasc, textGenero, textnomDue, dniint, textDesc,"");
             ListaMastEmergencia.addMascotaEmergencia(mascotaEmer);
             finish();
             Intent intent = new Intent(MainActivityRegistro.this,MainActivity.class);

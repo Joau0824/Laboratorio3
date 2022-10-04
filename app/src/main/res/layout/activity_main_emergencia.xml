@@ -10,8 +10,8 @@
         android:id="@+id/DNI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="60dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,62 +21,48 @@
         android:id="@+id/Destino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="72dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Origen" />
-
-    <EditText
-        android:id="@+id/Origen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="52dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintTop_toBottomOf="@+id/textOrigen" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
         android:text="Origen:"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Origen"
-        app:layout_constraintEnd_toStartOf="@+id/Origen"
-        app:layout_constraintTop_toTopOf="@+id/Origen"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
         android:text="Destino:"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Destino"
-        app:layout_constraintEnd_toStartOf="@+id/Destino"
-        app:layout_constraintTop_toTopOf="@+id/Destino" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="76dp"
         android:text="DNI:"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/DNI"
-        app:layout_constraintEnd_toStartOf="@+id/DNI"
-        app:layout_constraintTop_toTopOf="@+id/DNI" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
         android:id="@+id/Calcular"
@@ -84,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#E16464"
+        android:onClick="buttonGetCoordinates"
         android:text="Calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -91,13 +78,49 @@
         app:layout_constraintTop_toBottomOf="@+id/DNI" />
 
     <TextView
-        android:id="@+id/contadorID"
+        android:id="@+id/contador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:hint="----"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/Calcular"
         app:layout_constraintStart_toStartOf="@+id/Calcular"
         app:layout_constraintTop_toBottomOf="@+id/Calcular" />
+
+    <FrameLayout
+        android:id="@+id/frameMapGoogle"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contador"
+        app:layout_constraintVertical_bias="0.0">
+
+        <fragment
+            android:id="@+id/mapGoogle"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            tools:context=".MainActivityEmergencia" />
+    </FrameLayout>
+
+
+
+    <TextView
+        android:id="@+id/textOrigen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:text="Av. Militar 2026, Lince 15046"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
