@@ -29,6 +29,7 @@ public class historialAdapter extends RecyclerView.Adapter<historialAdapter.Hist
     @Override
     public void onBindViewHolder(@NonNull HistorialViewHolder holder, int position) {
 
+
     }
 
     @Override
