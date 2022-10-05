@@ -55,6 +55,7 @@ public class MainActivityEmergencia extends AppCompatActivity implements OnMapRe
     private final LatLng ORIGEN = new LatLng(-12.084538, -77.031396);
     private int minutos;
     private int hor,min,seg;
+    private String lat,lon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -190,10 +191,10 @@ public class MainActivityEmergencia extends AppCompatActivity implements OnMapRe
                 destinolat = addressList.get(0).getLatitude();
                 destinolong = addressList.get(0).getLongitude();
 
-                textView.setText("Latitude: " + String.valueOf(destinolat)
-                        + " | " + "Longitude: " + String.valueOf(destinolong));
                 String latlon=String.valueOf(destinolat) +","+String.valueOf(destinolong);
-
+                lat=String.valueOf(destinolat);
+                lon=String.valueOf(destinolong);
+                Log.d("msg",lat+lon);
             }
 
         } catch (IOException e) {
@@ -206,6 +207,8 @@ public class MainActivityEmergencia extends AppCompatActivity implements OnMapRe
     }
     public void maps (View view){
         Intent intent = new Intent (this, MapsActivity.class);
+        intent.putExtra("lat", lat);
+        intent.putExtra("lon", lon);
         startActivity(intent);
 
     }

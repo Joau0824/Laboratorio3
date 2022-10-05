@@ -3,6 +3,7 @@ package com.example.laboratorio3;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -63,15 +65,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        direction();
+        Intent intent = this.getIntent();
+        String lat = intent.getStringExtra("lat");
+        String lon = intent.getStringExtra("lon");
+        String latlon=lat+", "+lon;
+        Log.d("msg2",latlon);
+        direction(lat,lon);
 
     }
-    private void direction(){
+    private void direction(String lat,String lon){
+        Log.d("msg1",lat);
+        String latlon=lat+", "+lon;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         String url = Uri.parse("https://maps.googleapis.com/maps/api/directions/json")
                 .buildUpon()
-                .appendQueryParameter("destination", "-6.9218571, 107.6048254")
-                .appendQueryParameter("origin", "-6.9249233, 107.6345122")
+                .appendQueryParameter("destination", latlon)
+                .appendQueryParameter("origin", "-12.084538, -77.031396")
                 .appendQueryParameter("mode", "driving")
                 .appendQueryParameter("key", "AIzaSyDV6J8RAPGFqjWGTP4pXp2wu4Kj9pz7jYo")
                 .toString();
@@ -110,12 +119,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             polylineOptions.geodesic(true);
                         }
                         mMap.addPolyline(polylineOptions);
-                        mMap.addMarker(new MarkerOptions().position(new LatLng(-6.9249233, 107.6345122)).title("Marker 1"));
-                        mMap.addMarker(new MarkerOptions().position(new LatLng(-6.9218571, 107.6048254)).title("Marker 1"));
+                        mMap.addMarker(new MarkerOptions().position(new LatLng(-12.084538, -77.031396)).title("Marker 1"));
+                        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(lat), Double.parseDouble(lon))).title("Marker 1"));
 
                         LatLngBounds bounds = new LatLngBounds.Builder()
-                                .include(new LatLng(-6.9249233, 107.6345122))
-                                .include(new LatLng(-6.9218571, 107.6048254)).build();
+                                .include(new LatLng(-12.084538,-77.031396))
+                                .include(new LatLng(Double.parseDouble(lat), Double.parseDouble(lon))).build();
                         Point point = new Point();
                         getWindowManager().getDefaultDisplay().getSize(point);
                         mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, point.x, 150, 30));
