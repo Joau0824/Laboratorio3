@@ -73,7 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .appendQueryParameter("destination", "-6.9218571, 107.6048254")
                 .appendQueryParameter("origin", "-6.9249233, 107.6345122")
                 .appendQueryParameter("mode", "driving")
-                .appendQueryParameter("key", "AIzaSyDbmeI6K4xIgWkhx95adiFFR_mFr0yjNLM")
+                .appendQueryParameter("key", "AIzaSyDV6J8RAPGFqjWGTP4pXp2wu4Kj9pz7jYo")
                 .toString();
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override

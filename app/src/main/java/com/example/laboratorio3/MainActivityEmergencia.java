@@ -6,11 +6,13 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +26,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.laboratorio3.databinding.ActivityMapsBinding;
 import com.example.laboratorio3.entity.ListaMastEmergencia;
 import com.example.laboratorio3.entity.MascotaEmergencia;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -45,7 +48,8 @@ import java.util.List;
 
 public class MainActivityEmergencia extends AppCompatActivity implements OnMapReadyCallback {
 
-    private GoogleMap map;
+    private GoogleMap mMap;
+
     private double destinolat = 0.0;
     private double destinolong = 0.0;
     private final LatLng ORIGEN = new LatLng(-12.084538, -77.031396);
@@ -81,6 +85,9 @@ public class MainActivityEmergencia extends AppCompatActivity implements OnMapRe
 
     }
 
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu3puntos,menu);
@@ -105,6 +112,7 @@ public class MainActivityEmergencia extends AppCompatActivity implements OnMapRe
         }
 
     }
+
 
 
     public void buttonGetCoordinates(View view){
@@ -174,27 +182,33 @@ public class MainActivityEmergencia extends AppCompatActivity implements OnMapRe
         }
 
 
-        //try {
-        //    System.out.println(editTextDestin.getText().toString());
-        //    addressList = geocoder.getFromLocationName(editTextDestin.getText().toString(), 1);
+        try {
+            System.out.println(editTextDestin.getText().toString());
+            addressList = geocoder.getFromLocationName(editTextDestin.getText().toString(), 1);
 
-        //    if (addressList != null){
-        //        destinolat = addressList.get(0).getLatitude();
-        //        destinolong = addressList.get(0).getLongitude();
+            if (addressList != null){
+                destinolat = addressList.get(0).getLatitude();
+                destinolong = addressList.get(0).getLongitude();
 
-        //        textView.setText("Latitude: " + String.valueOf(destinolat)
-        //                + " | " + "Longitude: " + String.valueOf(destinolong));
-        //    }
+                textView.setText("Latitude: " + String.valueOf(destinolat)
+                        + " | " + "Longitude: " + String.valueOf(destinolong));
+                String latlon=String.valueOf(destinolat) +","+String.valueOf(destinolong);
 
-        //} catch (IOException e) {
-        //    e.printStackTrace();
-        //}
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
 
 
     }
+    public void maps (View view){
+        Intent intent = new Intent (this, MapsActivity.class);
+        startActivity(intent);
 
+    }
 
 
 }

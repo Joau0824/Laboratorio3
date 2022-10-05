@@ -87,29 +87,23 @@
         app:layout_constraintStart_toStartOf="@+id/Calcular"
         app:layout_constraintTop_toBottomOf="@+id/Calcular" />
 
+
     <FrameLayout
         android:id="@+id/frameMapGoogle"
-        android:layout_width="0dp"
-        android:layout_height="280dp"
+        android:layout_width="224dp"
+        android:layout_height="168dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contador"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
-        <fragment
-            android:id="@+id/mapGoogle"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            tools:context=".MainActivityEmergencia" />
     </FrameLayout>
-
 
     <TextView
         android:id="@+id/textOrigen"
@@ -123,4 +117,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonRuta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="123dp"
+        android:layout_marginEnd="159dp"
+        android:onClick="maps"
+        android:text="Ver Ruta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Calcular" />
+
+    <fragment
+        android:id="@+id/mapGoogle"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="213dp"
+        android:layout_height="172dp"
+
+        tools:context=".MainActivityEmergencia"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="549dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
